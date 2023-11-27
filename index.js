@@ -68,8 +68,8 @@
       document.querySelector('.js-result').innerHTML = result;
 
       document.querySelector('.js-moves').innerHTML = ` You
-      <img src="/images/${playerMove}-emoji.png" alt="rock emoji">
-      <img src="/images/${computerMove}-emoji.png" alt="paper emoji">
+      <img src="images/${playerMove}-emoji.png" alt="rock emoji">
+      <img src="images/${computerMove}-emoji.png" alt="paper emoji">
       Computer`;
 
       // display the results in a pop  up

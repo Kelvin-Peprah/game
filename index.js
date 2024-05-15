@@ -9,14 +9,27 @@ updateScoreElement();
 
 const resetScoreElement = document.querySelector('.js-score-reset');
 resetScoreElement.addEventListener('click', () => {
-  resetScore();
+  handleReset(event);;
 });
 
 document.body.addEventListener('keydown', (event) => {
   if (event.key === 'Backspace') {
-    resetScore();
+    handleReset(event);
   }
 });
+
+function handleReset(event) {
+  //display confirmation to reset
+  const userConfirmed = window.confirm(
+    'Are you sure you want to reset the score?'
+  );
+
+  if (userConfirmed) {
+    resetScore();
+  } else {
+event.preventDefault();
+  }
+}
 
 //reset score
 function resetScore() {

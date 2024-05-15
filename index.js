@@ -18,6 +18,32 @@ function resetScore() {
   updateScoreElement();
 }
 
+let isAutoPlaying = false;
+let intervalId;
+
+function autoPlay() {
+  if (!isAutoPlaying) {
+    intervalId = setInterval(function () {
+      const playerMove = pickComputerMove();
+      playGame(playerMove);
+    }, 1000);
+    isAutoPlaying = true;
+  } else {
+    clearInterval(intervalId);
+    isAutoPlaying = false;
+  }
+
+  const pauseAutoPlay = document.querySelector('.js-autoplay');
+
+  if (pauseAutoPlay.innerHTML === 'Auto Play') {
+    pauseAutoPlay.innerText = 'Pause';
+    pauseAutoPlay.classList.add('pause');
+  } else {
+    pauseAutoPlay.innerText = 'Auto Play';
+    pauseAutoPlay.classList.remove('pause');
+  }
+}
+
 //select player move
 function playGame(playerMove) {
   const computerMove = pickComputerMove();

@@ -7,6 +7,17 @@ let score = JSON.parse(localStorage.getItem('score')) || {
 
 updateScoreElement();
 
+const resetScoreElement = document.querySelector('.js-score-reset');
+resetScoreElement.addEventListener('click', () => {
+  resetScore();
+});
+
+document.body.addEventListener('keydown', (event) => {
+  if (event.key === 'Backspace') {
+    resetScore();
+  }
+});
+
 //reset score
 function resetScore() {
   score = {
@@ -17,6 +28,17 @@ function resetScore() {
   localStorage.removeItem('score');
   updateScoreElement();
 }
+
+const play = document.querySelector('.autoplay');
+play.addEventListener('click', () => {
+  autoPlay();
+});
+
+document.body.addEventListener('keydown', (event) => {
+  if (event.key === 'a') {
+    autoPlay();
+  }
+});
 
 let isAutoPlaying = false;
 let intervalId;

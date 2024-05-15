@@ -9,7 +9,7 @@ updateScoreElement();
 
 const resetScoreElement = document.querySelector('.js-score-reset');
 resetScoreElement.addEventListener('click', () => {
-  handleReset(event);;
+  handleReset(event);
 });
 
 document.body.addEventListener('keydown', (event) => {
@@ -27,7 +27,7 @@ function handleReset(event) {
   if (userConfirmed) {
     resetScore();
   } else {
-event.preventDefault();
+    event.preventDefault();
   }
 }
 

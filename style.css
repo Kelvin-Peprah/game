@@ -30,18 +30,18 @@ img {
 
 .js-moves {
   margin: 50px 0;
- }
+}
 
- .js-result {
+.js-result {
   font-size: 30px;
   font-weight: bold;
- }
+}
 
- .reset-button {
+.reset-button, .autoplay-button {
   background-color: white;
   color: black;
   border: none;
   font-size: 16px;
   padding: 9px 15px;
   cursor: pointer;
- }
+}
